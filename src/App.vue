@@ -1,14 +1,30 @@
-<template>
-  <div>
-    <h1>PROVA</h1>
-  </div>
-</template>
-
 <script>
-export default {
+import HeaderComp from './components/HeaderComp.vue';
+import MoviesComp from './components/MoviesComp.vue';
+import SearchbarComp from './components/SearchbarComp.vue';
 
+export default {
+  components: {
+    HeaderComp,
+    SearchbarComp,
+    MoviesComp
+  }
 }
 </script>
+
+<template>
+  <header>
+    <HeaderComp />
+    <SearchbarComp />
+  </header>
+
+  <body>
+    <MoviesComp />
+  </body>
+
+</template>
+
+
 
 <style lang="scss" scoped>
 
