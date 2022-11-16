@@ -4,7 +4,7 @@
             <img src="public\images\Netflix_2015_logo.svg.png" alt="Logo">
         </div>
         <div class="d-flex p-3">
-            <input type="text" class="form-control" id="" placeholder="Cerca il film o serie TV">
+            <input type="text" id="" placeholder="Cerca il film o serie TV">
             <button type="submit" class="btn btn-danger mx-2">Cerca</button>
         </div>
 

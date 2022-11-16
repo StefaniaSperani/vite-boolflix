@@ -1,12 +1,16 @@
 <template>
-    <div>
-
+    <div class="container">
+        <CardComp />
     </div>
 </template>
 
 <script>
+import CardComp from './CardComp.vue';
 export default {
-    name: 'MoviesComp'
+    name: 'MoviesComp',
+    components: {
+        CardComp
+    }
 }
 </script>
 
