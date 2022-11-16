@@ -28,10 +28,10 @@ export default {
 <style lang="scss" scoped>
 .mycard {
     color: black;
-    padding: 1em;
     background-color: grey;
-    width: 220px;
-    height: 500px;
+    width: 240px;
+    height: 550px;
+    overflow-y: auto;
 
     .image-wrapper {
         display: flex;

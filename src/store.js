@@ -23,12 +23,6 @@ export const store = reactive({
         })
         .then((res) => {
           this.movies = res.data.results;
-        })
-        .catch((errore) => {
-          console.log(errore);
-          if (errore.response.status === 422) {
-            return;
-          }
         }),
         axios
           .get(this.apiURL + this.endPointTv + this.apiKey, {

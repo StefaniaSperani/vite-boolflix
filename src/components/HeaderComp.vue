@@ -1,10 +1,10 @@
 <template>
-    <div class="container-fluid d-flex flex-row justify-content-between align-items-center">
+    <nav class="container-fluid d-flex flex-row justify-content-between align-items-center">
         <div>
             <img src="public\images\Netflix_2015_logo.svg.png" alt="Logo">
         </div>
         <SearchbarComp />
-    </div>
+    </nav>
 </template>
 
 <script>
@@ -17,8 +17,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
-    height: 90px;
+nav {
+    position: fixed;
+    height: 70px;
     background-image: linear-gradient(black, grey);
     color: #fff;
 
