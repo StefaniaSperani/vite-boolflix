@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <h1 v-if="!store.isLoading">{{ titolo }}</h1>
         <div class="row d-flex align-items-center justify-content-center gap-3">
             <CardComp :movie="movie" v-for="(movie, index) in movies" :key="index" />
         </div>
@@ -14,9 +15,10 @@ export default {
     components: {
         CardComp
     },
-    props: [
-        'movies'
-    ],
+    props: {
+        movies: Array,
+        titolo: String
+    },
     data() {
         return {
             store,

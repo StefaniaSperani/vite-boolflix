@@ -24,9 +24,6 @@ export default {
       store,
     }
   },
-  methods: {
-
-  },
   created() {
     store.getMovies()
   }
@@ -39,8 +36,8 @@ export default {
   </header>
 
   <body>
-    <MoviesComp :movies="store.movies" />
-    <MoviesComp :movies="store.series" />
+    <MoviesComp :movies="store.movies" titolo="Movies" />
+    <MoviesComp :movies="store.series" titolo="Series" />
   </body>
 
 </template>
