@@ -1,34 +1,46 @@
 <script>
 import HeaderComp from './components/HeaderComp.vue';
 import MoviesComp from './components/MoviesComp.vue';
-import SearchbarComp from './components/SearchbarComp.vue';
-import axios from 'axios';
+import { store } from './store';
 
+
+/*
+"id": 550,
+"poster_path"
+"title": "Fight Club",
+"original_title": "Fight Club",
+"original_language": "en",
+"vote_average": 8.428,
+"overview": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
+
+*/
 export default {
   components: {
     HeaderComp,
-    SearchbarComp,
     MoviesComp
   },
   data() {
     return {
-      apiURL: 'https://api.themoviedb.org/3/movie/550?api_key=601d4016fd1331c271a26b9a77dd6c45',
+      store,
     }
   },
   methods: {
 
   },
+  created() {
+    store.getMovies()
+  }
 }
 </script>
 
 <template>
   <header>
     <HeaderComp />
-    <SearchbarComp />
   </header>
 
   <body>
-    <MoviesComp />
+    <MoviesComp :movies="store.movies" />
+    <MoviesComp :movies="store.series" />
   </body>
 
 </template>
