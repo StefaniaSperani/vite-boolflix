@@ -19,6 +19,7 @@ export default {
 <style lang="scss" scoped>
 nav {
     position: fixed;
+    z-index: 30;
     height: 70px;
     background-image: linear-gradient(black, grey);
     color: #fff;

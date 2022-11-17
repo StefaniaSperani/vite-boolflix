@@ -1,18 +1,23 @@
 <template>
-    <div class="mycard text-center">
-        <div class="image-wrapper">
-            <img :src="basePosterPath + movie.poster_path" :alt="movie.title" class="">
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img :src="movie.poster_path ? basePosterPath + movie.poster_path : 'public/images/no-image.png'"
+                    :alt="movie.title">
+            </div>
+            <div class="flip-card-back">
+                <h1>{{ movie.title ? movie.title : movie.name }}</h1>
+                <p>{{ movie.original_title ? movie.original_title : movie.original_name }}</p>
+                <span v-if="availableFlags.includes(movie.original_language)">
+                    <img :src="'/public/images/' + movie.original_language + '.svg'"
+                        :alt="movie.original_language + 'Flag'" class="flag">
+                </span>
+                <span>{{ movie.original_language }}</span>
+                <div>Voto: {{ movie.vote_average }}</div>
+                <span v-for="s in 5" class="fa-star" :class="(s <= stars) ? 'fa-solid' : 'fa-regular'"></span>
+                <p>{{ movie.overview }}</p>
+            </div>
         </div>
-        <h4>{{ movie.title ? movie.title : movie.name }}</h4>
-        <h3>{{ movie.original_title ? movie.original_title : movie.original_name }}</h3>
-        <div v-if="availableFlags.includes(movie.original_language)">
-            <img :src="'/public/images/' + movie.original_language + '.svg'" :alt="movie.original_language + 'Flag'"
-                class="flag">
-        </div>
-        <h3>{{ movie.original_language }}</h3>
-        <span v-for="s in 5" class="fa-star" :class="(s <= stars) ? 'fa-solid' : 'fa-regular'"></span>
-        <div>{{ movie.vote_average }}</div>
-        <!-- <div>{{ movies.overview }}</div> -->
     </div>
 </template>
 
@@ -46,43 +51,57 @@ export default {
     color: rgb(172, 20, 20);
 }
 
+img {
+    width: 300px;
+    height: 400px;
+}
 
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+}
 
-.mycard {
+.flip-card-inner {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    text-align: start;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #bbb;
     color: black;
-    background-color: grey;
-    width: 240px;
-    height: 580px;
+}
+
+.flip-card-back {
+    background-color: #000000;
+    color: white;
+    padding: 1em;
     overflow-y: auto;
+    transform: rotateY(180deg);
+}
 
-    .image-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 190px;
-        height: 300px;
-    }
-
-    .flag {
-        height: 20px;
-        width: 30px;
-    }
-
-    img {
-        width: 218px;
-        height: 310px;
-        object-fit: cover;
-    }
-
-    h4 {
-        color: #fff;
-        padding: 0.5em;
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-
-    h3 {
-        color: #fff;
-    }
+.flag {
+    height: 20px;
+    width: 30px;
+    padding-right: 0.3em;
 }
 </style>
