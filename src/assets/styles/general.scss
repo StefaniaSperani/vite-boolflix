@@ -6,9 +6,11 @@
 @import '@fortawesome/fontawesome-free/css/regular.css';
 
 
-body{
+html{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: grey;
+body{
+  background-color: grey;
+}
     /* width */
 ::-webkit-scrollbar {
     width: 10px;

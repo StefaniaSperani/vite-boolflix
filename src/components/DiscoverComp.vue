@@ -32,7 +32,7 @@ export default {
     padding: 3.7em 0;
 
     video {
-        height: 800px;
+        width: 100%
     }
 }
 </style>
