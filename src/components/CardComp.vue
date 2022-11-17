@@ -8,8 +8,9 @@
             <div class="flip-card-back">
                 <h1>{{ movie.title ? movie.title : movie.name }}</h1>
                 <p>{{ movie.original_title ? movie.original_title : movie.original_name }}</p>
-                <span v-if="availableFlags.includes(movie.original_language)">
-                    <img :src="'/public/images/' + movie.original_language + '.svg'"
+                <span>
+                    <!-- v-if="availableFlags.includes(movie.original_language)" -->
+                    <img :src="availableFlags ? '/public/images/' + movie.original_language + '.svg' : '/public/images/no_flag.svg'"
                         :alt="movie.original_language + 'Flag'" class="flag">
                 </span>
                 <span>{{ movie.original_language }}</span>
