@@ -1,4 +1,18 @@
+<template>
+  <header>
+    <HeaderComp />
+  </header>
+
+  <body>
+    <DiscoverComp titolo="Our new Trailer" />
+    <MoviesComp :movies="store.movies" titolo="Movies" />
+    <MoviesComp :movies="store.series" titolo="Series" />
+  </body>
+
+</template>
+
 <script>
+import DiscoverComp from './components/DiscoverComp.vue';
 import HeaderComp from './components/HeaderComp.vue';
 import MoviesComp from './components/MoviesComp.vue';
 import { store } from './store';
@@ -17,7 +31,8 @@ import { store } from './store';
 export default {
   components: {
     HeaderComp,
-    MoviesComp
+    MoviesComp,
+    DiscoverComp
   },
   data() {
     return {
@@ -25,24 +40,10 @@ export default {
     }
   },
   created() {
-    store.getMovies()
+
   }
 }
 </script>
-
-<template>
-  <header>
-    <HeaderComp />
-  </header>
-
-  <body>
-    <MoviesComp :movies="store.movies" titolo="Movies" />
-    <MoviesComp :movies="store.series" titolo="Series" />
-  </body>
-
-</template>
-
-
 
 <style lang="scss" scoped>
 

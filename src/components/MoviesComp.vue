@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <h1 v-if="!store.isLoading">{{ titolo }}</h1>
-        <div class="row d-flex align-items-center justify-content-center gap-3">
+        <div class="row d-flex align-items-center justify-content-center gap-4">
             <CardComp :movie="movie" v-for="(movie, index) in movies" :key="index" />
         </div>
     </div>
@@ -24,6 +24,9 @@ export default {
             store,
         }
     },
+    // created() {
+    //     store.discover()
+    // },
 }
 </script>
 

@@ -2,13 +2,14 @@ import { reactive } from "vue";
 import axios from "axios";
 
 export const store = reactive({
-  apiURL: "https://api.themoviedb.org/3/search",
-  apiKey: "?api_key=e99307154c6dfb0b4750f6603256716d",
-  // &query=a&language=it-IT
-  endPointMovie: "/movie",
-  endPointTv: "/tv",
+  apiURL: "https://api.themoviedb.org/3",
+  apiKey: "?api_key=e99307154c6dfb0b4750f6603256716d&language=it-IT",
+  endPointMovie: "/search/movie",
+  endPointTv: "/search/tv",
+  endPointDiscover: "/discover/movie",
   movies: [],
   series: [],
+  discover: [],
   query: "",
   isLoading: true,
 
@@ -40,4 +41,10 @@ export const store = reactive({
       this.isLoading = true;
     }
   },
+  // discover() {
+  //   axios.get(this.apiURL + this.endPointDiscover + this.apiKey).then((res) => {
+  //     this.discover = res.data.results;
+  //     console.log(res.data.results);
+  //   });
+  //},
 });

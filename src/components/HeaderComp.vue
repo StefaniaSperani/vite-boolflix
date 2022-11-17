@@ -1,7 +1,10 @@
 <template>
     <nav class="container-fluid d-flex flex-row justify-content-between align-items-center">
         <div>
-            <img src="public\images\Netflix_2015_logo.svg.png" alt="Logo">
+            <a href="http://localhost:5173/">
+                <img src="public\images\Netflix_2015_logo.svg.png" alt="Logo">
+            </a>
+
         </div>
         <SearchbarComp />
     </nav>
