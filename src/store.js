@@ -20,25 +20,31 @@ export const store = reactive({
 
   // FUNCTIONS
   getMovies() {
-    axios
-      .get(this.apiURL + this.endPointMovie + this.apiKey, {
-        params: {
-          query: this.query,
-        },
-      })
-      .then((res) => {
-        this.movies = res.data.results;
-      }),
+    if (this.query) {
       axios
-        .get(this.apiURL + this.endPointTv + this.apiKey, {
+        .get(this.apiURL + this.endPointMovie + this.apiKey, {
           params: {
             query: this.query,
           },
         })
         .then((res) => {
-          this.series = res.data.results;
-          this.isLoading = false;
-        });
+          this.movies = res.data.results;
+        }),
+        axios
+          .get(this.apiURL + this.endPointTv + this.apiKey, {
+            params: {
+              query: this.query,
+            },
+          })
+          .then((res) => {
+            this.series = res.data.results;
+            this.isLoading = false;
+          });
+    } else {
+      this.movies = [];
+      this.series = [];
+      this.isLoading = true;
+    }
   },
   getPopular() {
     axios.get(this.apiURL + this.endPointPopular + this.apiKey).then((res) => {
