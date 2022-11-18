@@ -53,25 +53,25 @@ export default {
 
 img {
     width: 300px;
-    height: 450px;
+    height: 460px;
     object-fit: cover;
 }
 
 .flip-card {
     background-color: transparent;
     width: 300px;
-    height: 450px;
+    height: 460px;
     perspective: 1000px;
 }
 
 .flip-card-inner {
     position: relative;
     width: 300px;
-    height: 450px;
+    height: 460px;
     text-align: start;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px 0 rgba(85, 79, 79, 0.5);
 }
 
 .flip-card:hover .flip-card-inner {
