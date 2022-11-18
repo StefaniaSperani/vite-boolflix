@@ -5,10 +5,10 @@
 
   <body>
     <DiscoverComp titolo="Our newest Trailer" />
-    <MoviesComp v-if="!store.isLoading" :movies="store.popular" titolo="Popular" />
+    <MoviesComp :movies="store.popular" titolo="Popular" />
     <div ref="scrolla">
-      <MoviesComp v-if="store.isLoading" :movies="store.movies" titolo="Movies" />
-      <MoviesComp v-if="store.isLoading" :movies="store.series" titolo="Series" />
+      <MoviesComp v-if="store.movies.length" :movies="store.movies" titolo="Movies" />
+      <MoviesComp v-if="store.movies.length" :movies="store.series" titolo="Series" />
     </div>
   </body>
 
