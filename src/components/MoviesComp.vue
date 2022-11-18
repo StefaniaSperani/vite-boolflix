@@ -3,7 +3,6 @@
         <h1 v-if="!store.isLoading">{{ titolo }}</h1>
         <div class="row d-flex align-items-center justify-content-center gap-4">
             <CardComp :movie="movie" v-for="(movie, index) in movies" :key="index" />
-            <!-- <CardComp v-else="discover" :discover="genre" v-for="genre in discover" :key="genre.id" /> -->
         </div>
     </div>
 </template>

@@ -6,13 +6,14 @@ export const store = reactive({
   apiKey: "?api_key=e99307154c6dfb0b4750f6603256716d&language=it-IT",
   endPointMovie: "/search/movie",
   endPointTv: "/search/tv",
+  endPointPopular: "/movie/popular",
   // endPointGenres: "/genre/movie/list",
   endPointDiscover: "/discover/movie",
   // endPointWG: "&with_genres=",
   movies: [],
   series: [],
   // genres: [],
-  // discover: [],
+  popular: [],
   query: "",
   // genreName: "",
   isLoading: true,
@@ -44,6 +45,13 @@ export const store = reactive({
       this.series = [];
       this.isLoading = true;
     }
+  },
+  getPopular() {
+    axios.get(this.apiURL + this.endPointPopular + this.apiKey).then((res) => {
+      this.popular = res.data.results;
+      console.log(this.popular);
+      this.isLoading = false;
+    });
   },
 
   // getGenres() {

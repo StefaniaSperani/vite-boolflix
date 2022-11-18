@@ -5,12 +5,11 @@
 
   <body>
     <DiscoverComp titolo="Our newest Trailer" />
+    <MoviesComp :movies="store.popular" titolo="Popular" />
     <div ref="scrolla">
       <MoviesComp :movies="store.movies" titolo="Movies" />
       <MoviesComp :movies="store.series" titolo="Series" />
     </div>
-
-    <!-- <MoviesComp v-if="store.discover" :discover="store.discover" :titolo="store.genreName.name" /> -->
   </body>
 
 </template>
@@ -35,7 +34,6 @@ export default {
   },
   watch: {
     'store.movies'(newVal, OldVal) { // newVal e oldVal sono facoltativi, ma meglio metterli
-      console.log(this.$refs.scrolla);
       const el = this.$refs.scrolla;
       this.$nextTick(() => {
         el.scrollIntoView({ behavior: "smooth" });
@@ -43,8 +41,8 @@ export default {
 
     }
   },
-  created() {
-
+  mounted() {
+    store.getPopular()
   },
 
 }
