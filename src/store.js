@@ -6,11 +6,15 @@ export const store = reactive({
   apiKey: "?api_key=e99307154c6dfb0b4750f6603256716d&language=it-IT",
   endPointMovie: "/search/movie",
   endPointTv: "/search/tv",
+  // endPointGenres: "/genre/movie/list",
   endPointDiscover: "/discover/movie",
+  // endPointWG: "&with_genres=",
   movies: [],
   series: [],
-  discover: [],
+  // genres: [],
+  // discover: [],
   query: "",
+  // genreName: "",
   isLoading: true,
 
   // FUNCTIONS
@@ -41,10 +45,30 @@ export const store = reactive({
       this.isLoading = true;
     }
   },
-  // discover() {
-  //   axios.get(this.apiURL + this.endPointDiscover + this.apiKey).then((res) => {
-  //     this.discover = res.data.results;
-  //     console.log(res.data.results);
+
+  // getGenres() {
+  //   axios.get(this.apiURL + this.endPointGenres + this.apiKey).then((res) => {
+  //     this.genres = res.data.genres;
+  //     console.log(this.genres);
   //   });
-  //},
+  // },
+  // changeGenre(event) {
+  //   let genreId = event.target.value;
+  //   console.log(event.target.value);
+  //   axios
+  //     .get(
+  //       this.apiURL +
+  //         this.endPointDiscover +
+  //         this.apiKey +
+  //         this.endPointWG +
+  //         genreId
+  //     )
+  //     .then((res) => {
+  //       this.discover = res.data.results;
+  //     });
+  //   if (genreId) {
+  //     this.genreName = this.genres.filter((g) => g.id == genreId);
+  //     console.log(this.genreName.name);
+  //   }
+  // },
 });
