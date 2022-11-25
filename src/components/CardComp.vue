@@ -2,7 +2,7 @@
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img :src="movie.poster_path ? basePosterPath + movie.poster_path : 'public/images/no-image.png'"
+                <img :src="movie.poster_path ? basePosterPath + movie.poster_path : '/public/images/no-image.png'"
                     :alt="movie.title">
             </div>
             <div class="flip-card-back">

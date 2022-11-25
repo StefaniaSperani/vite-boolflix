@@ -4,8 +4,8 @@
     </div>
     <div class="d-flex justify-content-center">
         <video controls loop autoplay muted>
-            <source src="public\videos\Piovere - 78.mp4" type="video/mp4">
-            <source src="public\videos\Piovere - 78.mp4" type="video/ogg">
+            <source src="/public/videos/Piovere.mp4" type="video/mp4">
+            <source src="/public/videos/Piovere.mp4" type="video/ogg">
             Your browser does not support HTML video.
         </video>
         <!-- <iframe src="https://www.youtube.com/embed/BafapW78jmM" title="YouTube video player" frameborder="0"

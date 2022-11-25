@@ -2,7 +2,7 @@
     <nav class="container-fluid d-flex flex-row justify-content-between align-items-center">
         <div class="d-flex align-items-center gap-4">
             <a href="http://localhost:5173/">
-                <img src="public\images\Netflix_2015_logo.svg.png" alt="Logo">
+                <img src="/public/images/Netflix_2015_logo.svg.png" alt="Logo">
             </a>
             <!-- <select class="form-select">
                 @change="store.changeGenre($event)"
